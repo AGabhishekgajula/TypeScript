@@ -1,14 +1,20 @@
-interface Authenticatable {
-  email: string;
-  password: string;
+// interface is available in ts not in js
+// interfaces and type works mostly similar
 
-  login(): void;
-  logout(): void;
-}
+// type Authenticatable= {
+//   email: string;
+//   password: string;
+
+//   login(): void;
+//   logout(): void;
+// }
 
 interface AuthenticatableAdmin extends Authenticatable {
   role: 'admin' | 'superadmin';
 }
+
+// above technique is called interface merging it works like we can add the declaration 
+//by extending interface or we can create another interface with the same name but we wont get any arror
 
 class AuthenticatableUser implements Authenticatable {
   constructor(
@@ -36,6 +42,8 @@ function authenticate(user: Authenticatable) {
 //   role: string;
 // }
 
+
+// interface can be used as a type like shown below
 let user: Authenticatable;
 
 user = {

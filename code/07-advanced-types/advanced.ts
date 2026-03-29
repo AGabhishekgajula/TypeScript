@@ -1,6 +1,9 @@
+// this feature is called indexing 
 type DataStore = {
   [prop: string]: number | boolean;
 };
+// below statement is similar to above type
+// let someObj:Record<string,number|boolean>;
 
 let store: DataStore = {};
 
@@ -20,5 +23,5 @@ const dataEntries = {
 } satisfies Record<string, number>;
 
 // ...
-
+// below satement will through the error if we dont use ht satisfies in the above object
 // dataEntries.entry3

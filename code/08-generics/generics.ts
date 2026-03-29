@@ -15,7 +15,10 @@ function merge<T, U>(a: T, b: U) {
 }
 
 const ids = merge(1, 'Max');
+// ids[0]. this will through the error if we dont use the Generics because we don't know the types prior
 
+
+// below functions adds the constraints to the generics
 function mergeObj<T extends object, U extends object>(a: T, b: U) {
   return { ...a, ...b };
 }

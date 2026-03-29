@@ -1,5 +1,5 @@
 let userName: string; // number, boolean
-let userAge = 38;
+let userAge = 38; //in this case ts automatically assign userAge type as number
 
 // ...
 

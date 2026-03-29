@@ -1,10 +1,15 @@
+// in the below stmt extends new means its a type of class
 function logger<T extends new (...args: any[]) => any>(
   target: T,
   ctx: ClassDecoratorContext
 ) {
+  // below three console stmts are executed once when @logger is attached with class
   console.log('logger decorator');
   console.log(target);
   console.log(ctx);
+
+  // here we are merging the blow class with Person class
+  // return stmt will be executed every time whenever an object is created
 
   return class extends target {
     constructor(...args: any[]) {
@@ -15,10 +20,13 @@ function logger<T extends new (...args: any[]) => any>(
   };
 }
 
+// method decorator
+// method decorators will be executed before class decorators
 function autobind(
   target: (...args: any[]) => any,
   ctx: ClassMethodDecoratorContext
 ) {
+  // addIntialalizer will the add the given function as constructor in the context class
   ctx.addInitializer(function (this: any) {
     this[ctx.name] = this[ctx.name].bind(this);
   });

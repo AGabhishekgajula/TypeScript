@@ -1,3 +1,8 @@
+// below two functions are same but in the commented one we are specifying the type explicitly
+// function add(a: number, b: number):number {
+//   return a + b;
+// }
+
 function add(a: number, b: number) {
   return a + b;
 }
@@ -5,6 +10,8 @@ function add(a: number, b: number) {
 function log(message: string) {
   console.log(message);
 }
+
+// never is used to specify the given variable or function return type will never give something
 
 function logAndThrow(errorMessage: string): never {
   console.log(errorMessage);
@@ -14,6 +21,7 @@ function logAndThrow(errorMessage: string): never {
 const logMsg = (msg: string) => {
   console.log(msg);
 };
+// used in call backs
 
 function performJob(cb: (msg: string) => void) {
   // ...
